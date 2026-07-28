@@ -13,6 +13,8 @@
 </head>
 <body>
 
+  <button id="secret-easter-egg" class="secret-btn" type="button" aria-label="Secret Button"></button>
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header class="site-header">
@@ -340,6 +342,22 @@
 
     </div>
   </footer>
+
+  <div id="secret-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close-btn" aria-label="Close secret popup">&times;</button>
+      <div class="modal-body">
+        <span class="modal-badge">🏆 Achievement Unlocked!</span>
+        <h2 id="modal-title" class="modal-title">You Found The Secret Easter Egg!</h2>
+        <p class="modal-text">
+          You clearly know your way around web pages and love inspecting elements! Since you found this secret portal, feel free to fill out my private contact form below.
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScgSYTADasoBB2dHNHjedGHgugUASUHtTnnNSIDnqflJY3ygQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="btn btn-primary modal-btn">
+          Open Secret Contact Form 🚀
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 
