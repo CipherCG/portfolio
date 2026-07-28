@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal developer portfolio displaying software engineering projects, technical skill set, certifications, and background.">
+  <meta name="author" content="Portfolio Owner">
+  <title>Developer Portfolio | Home</title>
+  
+  <link rel="icon" type="image/png" href="images/website_logo.png">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="nav-brand">
+        <a href="#hero" class="brand-link" aria-label="Home page">
+          <img src="images/website_logo.png" alt="Developer Logo" class="nav-logo">
+          <span class="brand-name">Developer Name</span>
+        </a>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#hero" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+        <li class="nav-item"><a href="#certifications" class="nav-link">Certifications</a></li>
+      </ul>
+
+      <div class="theme-switch-wrapper">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark and light theme" type="button">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+          <span class="theme-text sr-only">Switch Theme</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+      <div class="hero-container">
+        <div class="hero-text-content">
+          <span class="hero-greeting">Welcome to my portfolio</span>
+          <h1 id="hero-heading" class="hero-title">
+            Hi, I'm <span class="highlight">[Your Name]</span>
+          </h1>
+          <p class="hero-subtitle">
+            Software Developer &amp; Tech Enthusiast
+          </p>
+          <p class="hero-description">
+            I specialize in writing clean, efficient code and building interactive web applications. Passionate about software architecture, modern web technologies, and continuous learning.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Explore Projects</a>
+            <a href="#about" class="btn btn-secondary">Learn More About Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="projects-heading" class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">A showcase of application development, problem-solving, and clean code principles.</p>
+        </header>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <img src="images/placeholder.txt" alt="Screenshot preview of Project One interface" class="project-image" loading="lazy">
+            </div>
+            <div class="project-details">
+              <header class="project-header">
+                <span class="project-category">Web Application</span>
+                <h3 class="project-title">Project One Title</h3>
+              </header>
+              <p class="project-description">
+                A detailed description of Project One. Explain what problem this application solves, how it works under the hood, and what key technical decisions were made during development.
+              </p>
+              <div class="project-tech">
+                <h4 class="tech-title sr-only">Technologies Used:</h4>
+                <ul class="tech-tags-list" aria-label="Technologies used in Project One">
+                  <li class="tech-tag">HTML5</li>
+                  <li class="tech-tag">CSS3</li>
+                  <li class="tech-tag">JavaScript</li>
+                </ul>
+              </div>
+              <div class="project-actions">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline">Live Preview</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline">GitHub Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <img src="images/placeholder.txt" alt="Screenshot preview of Project Two interface" class="project-image" loading="lazy">
+            </div>
+            <div class="project-details">
+              <header class="project-header">
+                <span class="project-category">Full Stack Tool</span>
+                <h3 class="project-title">Project Two Title</h3>
+              </header>
+              <p class="project-description">
+                A detailed overview of Project Two. Focus on performance optimizations, user experience enhancements, or complex features built into this project.
+              </p>
+              <div class="project-tech">
+                <h4 class="tech-title sr-only">Technologies Used:</h4>
+                <ul class="tech-tags-list" aria-label="Technologies used in Project Two">
+                  <li class="tech-tag">JavaScript</li>
+                  <li class="tech-tag">CSS Variables</li>
+                  <li class="tech-tag">Git</li>
+                </ul>
+              </div>
+              <div class="project-actions">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline">Live Preview</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline">GitHub Repo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <img src="images/placeholder.txt" alt="Screenshot preview of Project Three interface" class="project-image" loading="lazy">
+            </div>
+            <div class="project-details">
+              <header class="project-header">
+                <span class="project-category">Utility / Tool</span>
+                <h3 class="project-title">Project Three Title</h3>
+              </header>
+              <p class="project-description">
+                An explanation of Project Three. Detail key software engineering milestones, API usage, or algorithms implemented within the code base.
+              </p>
+              <div class="project-tech">
+                <h4 class="tech-title sr-only">Technologies Used:</h4>
+                <ul class="tech-tags-list" aria-label="Technologies used in Project Three">
+                  <li class="tech-tag">HTML5</li>
+                  <li class="tech-tag">DOM Manipulation</li>
+                  <li class="tech-tag">a11y Standards</li>
+                </ul>
+              </div>
+              <div class="project-actions">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline">Live Preview</a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-outline">GitHub Repo</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section" aria-labelledby="skills-heading">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="skills-heading" class="section-title">Technical Skills Matrix</h2>
+          <p class="section-subtitle">Core languages, tools, and practices I utilize across software engineering projects.</p>
+        </header>
+
+        <div class="skills-grid">
+
+          <div class="skill-category-card">
+            <h3 class="category-title">Programming Languages</h3>
+            <ul class="skill-item-list">
+              <li class="skill-item">
+                <span class="skill-name">JavaScript (ES6+)</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">HTML5</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">CSS3</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-category-card">
+            <h3 class="category-title">Tools & Environment</h3>
+            <ul class="skill-item-list">
+              <li class="skill-item">
+                <span class="skill-name">Git &amp; GitHub</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">VS Code</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">GitHub Pages</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Chrome DevTools</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-category-card">
+            <h3 class="category-title">Core Competencies</h3>
+            <ul class="skill-item-list">
+              <li class="skill-item">
+                <span class="skill-name">Responsive Web Design</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Web Accessibility (a11y)</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">DOM Manipulation</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill-name">Cross-Browser Compatibility</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section" aria-labelledby="about-heading">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="about-heading" class="section-title">About Me</h2>
+          <p class="section-subtitle">My journey into software engineering and passion for building technology.</p>
+        </header>
+
+        <div class="about-content">
+          <div class="about-text-block">
+            <p>
+              Hello! I'm a developer who genuinely enjoys writing code, learning tech concepts, and building dynamic tools for the web. My focus is on creating clean, efficient software while continuously challenging myself to master new practices and patterns.
+            </p>
+            <p>
+              Whether I am constructing dynamic site components using Vanilla JavaScript, optimizing page structures for strict accessibility criteria, or engineering dark mode themes with CSS variables, I take pride in understanding how software works from the ground up.
+            </p>
+            <p>
+              When I step away from the keyboard, I stay active in learning about new developments across tech, experimenting with personal coding projects, and honing my technical skills day by day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="certifications-section" aria-labelledby="certifications-heading">
+      <div class="section-container">
+        <header class="section-header">
+          <h2 id="certifications-heading" class="section-title">Certifications &amp; Coursework</h2>
+          <p class="section-subtitle">Formal training, online certifications, and educational milestones.</p>
+        </header>
+
+        <div class="certifications-list-wrapper">
+          <ul class="certifications-list">
+
+            <li class="cert-item">
+              <div class="cert-info">
+                <h3 class="cert-title">Web Development Fundamentals / Certification Name</h3>
+                <p class="cert-issuer">Issued by Platform or Institution Name</p>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-date">Year Completed</span>
+              </div>
+            </li>
+
+            <li class="cert-item">
+              <div class="cert-info">
+                <h3 class="cert-title">Advanced JavaScript &amp; DOM Manipulation</h3>
+                <p class="cert-issuer">Issued by Platform or Institution Name</p>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-date">Year Completed</span>
+              </div>
+            </li>
+
+            <li class="cert-item">
+              <div class="cert-info">
+                <h3 class="cert-title">Responsive Web Design &amp; Accessibility (a11y)</h3>
+                <p class="cert-issuer">Issued by Platform or Institution Name</p>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-date">Year Completed</span>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-info">
+        <p class="copyright-text">
+          &copy; 2026 Developer Portfolio. Built with semantic HTML, custom CSS, and vanilla JavaScript.
+        </p>
+      </div>
+      <div class="footer-back-to-top">
+        <a href="#hero" class="back-to-top-link" aria-label="Back to top of page">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
