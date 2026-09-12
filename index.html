@@ -14,6 +14,15 @@
 </head>
 <body>
 
+    <!-- Admin Floating Control Bar -->
+    <div id="admin-bar" class="admin-bar" style="display: none;">
+        <span>⚡ Admin Mode Active</span>
+        <div>
+            <button class="btn btn-primary btn-sm" onclick="openProjectModal()">+ Add New Project</button>
+            <button class="btn btn-secondary btn-sm" onclick="logoutAdmin()">Logout</button>
+        </div>
+    </div>
+
     <!-- Header Navigation -->
     <header class="navbar">
         <div class="nav-container">
@@ -97,7 +106,6 @@
             <div class="container">
                 <h2 class="section-title">Featured Projects</h2>
 
-                <!-- Category Filters -->
                 <div class="filter-container">
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="web">Web Development</button>
@@ -105,65 +113,7 @@
                 </div>
 
                 <div class="projects-grid" id="projects-grid">
-                    <!-- Project Card 1 -->
-                    <article class="card project-card" data-category="web">
-                        <div class="project-header">
-                            <span class="project-folder">📁</span>
-                            <div class="project-links">
-                                <a href="https://github.com/CipherCG/portfolio" target="_blank" rel="noopener noreferrer" title="View Source Code">GitHub</a>
-                                <a href="https://ciphercg.github.io/portfolio/" target="_blank" rel="noopener noreferrer" title="Live Site">Live Demo</a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Personal Portfolio Website</h3>
-                        <p class="project-description">
-                            A responsive personal portfolio hosted on GitHub Pages featuring a dark/light theme switcher, smooth scrolling, dynamic project filtering, and clean modular code.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">GitHub Pages</span>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 2 -->
-                    <article class="card project-card" data-category="systems">
-                        <div class="project-header">
-                            <span class="project-folder">📁</span>
-                            <div class="project-links">
-                                <a href="https://github.com/CipherCG" target="_blank" rel="noopener noreferrer">GitHub</a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Custom Modding & Scripts</h3>
-                        <p class="project-description">
-                            Custom software modifications, block behavior logic, and script automation designed for extended gameplay mechanics and server environments.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Logic Scripts</span>
-                            <span class="tag">Configuration</span>
-                        </div>
-                    </article>
-
-                    <!-- Project Card 3 -->
-                    <article class="card project-card" data-category="systems">
-                        <div class="project-header">
-                            <span class="project-folder">📁</span>
-                            <div class="project-links">
-                                <a href="https://github.com/CipherCG" target="_blank" rel="noopener noreferrer">GitHub</a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Linux System Setup & Networking</h3>
-                        <p class="project-description">
-                            Custom Linux configurations, system hardening, service setup, and local network optimization scripts across various hardware environments.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">Debian</span>
-                            <span class="tag">Bash</span>
-                            <span class="tag">Networking</span>
-                            <span class="tag">Linux</span>
-                        </div>
-                    </article>
+                    <p>Loading projects...</p>
                 </div>
             </div>
         </section>
@@ -183,11 +133,47 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; <span id="year"></span> Chance Nelson. Built with HTML, CSS, & JS.</p>
+            <p>&copy; <span id="year"></span> Chance Nelson. <a href="#" id="admin-login-link" style="color: var(--text-muted); text-decoration: none;">🔐 Admin</a></p>
         </div>
     </footer>
 
-    <!-- Script File -->
+    <!-- Admin Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content card">
+            <span class="close-btn" onclick="closeModal('login-modal')">&times;</span>
+            <h3>Admin Login</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+                Enter a GitHub Fine-Grained Personal Access Token (with 'Contents: Read & Write' permission for this repository).
+            </p>
+            <form id="login-form">
+                <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxx" required class="modal-input">
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Authenticate</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Add/Edit Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content card">
+            <span class="close-btn" onclick="closeModal('project-modal')">&times;</span>
+            <h3 id="modal-title">Add New Project</h3>
+            <form id="project-form">
+                <input type="hidden" id="p-id">
+                <input type="text" id="p-title" placeholder="Project Title" required class="modal-input">
+                <textarea id="p-desc" placeholder="Project Description" required class="modal-input" rows="3"></textarea>
+                <input type="text" id="p-stack" placeholder="Tech Stack (comma-separated: HTML, CSS, JS)" required class="modal-input">
+                <select id="p-category" class="modal-input">
+                    <option value="web">Web Development</option>
+                    <option value="systems">Systems & Tools</option>
+                </select>
+                <input type="url" id="p-repo" placeholder="GitHub Repository URL (optional)" class="modal-input">
+                <input type="url" id="p-live" placeholder="Live Demo URL (optional)" class="modal-input">
+                <button type="submit" id="save-project-btn" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Commit Changes to GitHub</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Script -->
     <script src="script.js"></script>
 </body>
 </html>
