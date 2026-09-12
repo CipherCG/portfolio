@@ -1,5 +1,16 @@
 [
   {
+    "id": "proj-1789255644921",
+    "title": "Minecraft Server",
+    "description": "A complex Minecraft server built entirely based on a 8 GB laptop solely used for testing structures and mapping builds",
+    "tech_stack": [
+      "JavaScript"
+    ],
+    "category": "systems",
+    "repo_url": "",
+    "live_url": ""
+  },
+  {
     "id": "proj-1",
     "title": "Personal Portfolio Website",
     "description": "A responsive portfolio hosted on GitHub Pages featuring a dark/light theme switcher, dynamic filtering, and direct in-site editing via the GitHub API.",
