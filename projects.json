@@ -1,5 +1,16 @@
 [
   {
+    "id": "proj-1789246020833",
+    "title": "TEST",
+    "description": "This is a test to see if a computer will allow me to add a project from the websute instead of trying to do it in code from github",
+    "tech_stack": [
+      "TEST"
+    ],
+    "category": "systems",
+    "repo_url": "https://github.com/CipherCG/portfolio",
+    "live_url": "https://ciphercg.github.io/portfolio/"
+  },
+  {
     "id": "proj-1",
     "title": "Personal Portfolio Website",
     "description": "A responsive portfolio hosted on GitHub Pages featuring a dark/light theme switcher, dynamic filtering, and direct in-site editing via the GitHub API.",
