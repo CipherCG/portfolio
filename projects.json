@@ -1,7 +1,7 @@
 [
   {
     "id": "proj-1",
-    "title": "Personal Portfolio Websit",
+    "title": "Personal Portfolio Website",
     "description": "A responsive portfolio hosted on GitHub Pages featuring a dark/light theme switcher, dynamic filtering, and direct in-site editing via the GitHub API.",
     "tech_stack": [
       "HTML5",
