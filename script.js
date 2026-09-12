@@ -1,77 +1,53 @@
-/**
- * Main Interactive Script:
- * - Theme Toggle (Dark/Light Mode)
- * - Secret Easter Egg Modal Control
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-  // ==========================================
-  // 1. DARK / LIGHT THEME TOGGLE LOGIC
-  // ==========================================
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('.theme-icon') : null;
-
-  // Check saved theme preference or default to system setting
-  const savedTheme = localStorage.getItem('portfolio-theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    updateToggleIcon(true);
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    updateToggleIcon(false);
-  }
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const isDark = currentTheme === 'dark';
-
-      if (isDark) {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('portfolio-theme', 'light');
-        updateToggleIcon(false);
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('portfolio-theme', 'dark');
-        updateToggleIcon(true);
-      }
-    });
-  }
-
-  function updateToggleIcon(isDark) {
-    if (themeIcon) {
-      themeIcon.textContent = isDark ? '☀️' : '🌙';
+    // 1. Dynamic Footer Year
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
-  }
 
-  // ==========================================
-  // 2. SECRET EASTER EGG MODAL LOGIC
-  // ==========================================
-  const secretBtn = document.getElementById('secret-easter-egg');
-  const modalOverlay = document.getElementById('secret-modal');
-  const modalCloseBtn = document.getElementById('modal-close');
+    // 2. Dark / Light Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('.theme-icon');
+    const htmlElement = document.documentElement;
 
-  if (secretBtn && modalOverlay && modalCloseBtn) {
-    // Open modal on secret top-left corner click
-    secretBtn.addEventListener('click', () => {
-      modalOverlay.classList.add('active');
-      modalOverlay.setAttribute('aria-hidden', 'false');
+    // Check saved local storage preference
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
     });
 
-    // Close modal when clicking the 'X'
-    modalCloseBtn.addEventListener('click', () => {
-      modalOverlay.classList.remove('active');
-      modalOverlay.setAttribute('aria-hidden', 'true');
-    });
+    function updateThemeIcon(theme) {
+        themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+    }
 
-    // Close modal when clicking anywhere on the dark background
-    modalOverlay.addEventListener('click', (event) => {
-      if (event.target === modalOverlay) {
-        modalOverlay.classList.remove('active');
-        modalOverlay.setAttribute('aria-hidden', 'true');
-      }
+    // 3. Filterable Projects
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (filterValue === 'all' || cardCategory === filterValue) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     });
-  }
 });
