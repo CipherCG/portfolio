@@ -217,6 +217,11 @@ body {
     background-color: var(--bg-surface-hover);
 }
 
+.btn-sm {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+}
+
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -344,7 +349,83 @@ body {
 }
 
 /* ==========================================================================
-   Footer
+   Admin Controls & Modal Overlay Styles
+   ========================================================================== */
+.admin-bar {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--accent);
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-weight: 600;
+}
+
+.card-admin-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.close-btn:hover {
+    color: var(--text-main);
+}
+
+.modal-input {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.75rem;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--font-sans);
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* ==========================================================================
+   Footer & Responsiveness
    ========================================================================== */
 .footer {
     border-top: 1px solid var(--border-color);
@@ -355,7 +436,6 @@ body {
     margin-top: 3rem;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;
@@ -365,5 +445,10 @@ body {
     }
     .nav-links {
         gap: 1rem;
+    }
+    .admin-bar {
+        left: 1rem;
+        right: 1rem;
+        justify-content: space-between;
     }
 }
