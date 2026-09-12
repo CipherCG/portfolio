@@ -1,0 +1,20 @@
+[
+  {
+    "id": "proj-1",
+    "title": "Personal Portfolio Website",
+    "description": "A responsive portfolio hosted on GitHub Pages featuring a dark/light theme switcher, dynamic filtering, and direct in-site editing via the GitHub API.",
+    "tech_stack": ["HTML5", "CSS3", "JavaScript", "GitHub API"],
+    "category": "web",
+    "repo_url": "https://github.com/CipherCG/portfolio",
+    "live_url": "https://ciphercg.github.io/portfolio/"
+  },
+  {
+    "id": "proj-2",
+    "title": "Custom Modding & System Scripts",
+    "description": "Custom software modifications, block behavior logic, and script automation built for server environments.",
+    "tech_stack": ["Java", "Logic Scripts", "NeoForge"],
+    "category": "systems",
+    "repo_url": "https://github.com/CipherCG",
+    "live_url": ""
+  }
+]
